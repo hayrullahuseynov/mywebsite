@@ -1,0 +1,211 @@
+@media(min-width:700px){
+    .dark{
+        background-color:black ;
+        position: sticky;
+        z-index: 1020;
+        top: 0;
+        ul{
+            padding: 10px 0;
+            .nav-item{
+                a{
+                    color: white;
+                }
+            }
+        }
+    } 
+
+     .dark{
+         ul{
+             .dropdown{
+                 ul{
+                     li{
+                         a{
+                             color: black;
+                         }
+                     }
+                 }
+             }
+         }
+     } 
+} 
+.nav-link {
+  color: black;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+
+
+.navbar-brand {
+  font-family: "Alegreya",serif;
+}
+.navbar-brand{
+    font-family: "Alegreya",serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+.nav-link{
+    font-family: "Alegreya",serif;
+    font-weight: 500;
+    
+}
+.navbar .container .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+
+.links{
+    z-index: 1020;
+    #navCol{
+        display: flex;
+    list-style: none;
+    justify-content: center;
+    }
+}
+
+@media(max-width:700px){  
+    .links{
+        height: 0;
+        transition: .3s;
+        overflow: hidden;
+        position: fixed;
+        top: 68.2px;
+        background-color:white ;
+
+
+        #navCol{display: block;
+        li:hover{
+        background-color: rgba(20, 20, 20, 0.253);
+        }
+        }
+    }
+    .show-links{
+        height:fit-content;
+    }
+}
+@media (max-width:700px){
+    .navbar{
+        z-index: 1020;
+        background-color:black;
+        position:sticky;
+        top: 0;
+        
+        .container{
+            .navbar-brand{
+                color: white;
+            }
+            
+            justify-content: space-around;
+            .navbar-toggler{
+            display: block;
+                    .navbar-toggler-icon{
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+                    }
+            }
+        }
+    }
+    .dropdown-menu {
+        height: 0rem;
+        transition: .3s;
+        background-color:white ;
+        display: none;
+    list-style: none;
+    justify-content: center;
+    width: 100%;
+    border:none;
+    position: relative;
+            li{
+              .dropdown-item{
+                  font-size: 16px;
+                  text-transform: uppercase;
+                  font-weight: 500;
+              }
+            }
+    }
+    .drop{
+        display: block;
+        height: fit-content;
+    }
+}
+@media(min-width:700px){
+.navbar{
+    a{
+        color:black;
+    }
+    .container{
+        justify-content: center;
+        .navbar-toggler{
+            display: none;
+        }
+    }
+
+}
+}
+
+@media(min-width:700px){
+#navtoggle{
+    #navCol{
+        .dropdown{
+            ul{
+                width: 270px;
+                li{
+                    a{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+.dropdown-menu{
+    font-family: var(--bs-font-sans-serif);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    max-width: 100px;
+    list-style: none;
+    background-clip: padding-box;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.175)!important;
+    border: 0!important;
+    border-width: 0!important;
+    margin-bottom: 3rem!important;
+    background-color: rgb(228, 23, 23)!important;
+    display: none;
+    right: auto!important;
+    width: 10px;
+    border-radius: 12px;
+    
+    }
+.drop{
+    display:block;
+    
+}
+
+}
+.dropdown-menu .dropdown-item {
+    font-size: 14px;
+    font-family: "Alegreya",serif;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(20, 20, 20, 0.253);
+  }
+  

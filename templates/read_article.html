@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% block read_article_content %}
+            <div class="container">
+               <div class="d-flex">
+                 <h1 class="mt-4">{{object.title}}</h1>
+                   </div>  <hr><div class="d-flex">
+                
+                <a href="/category/{{object.categorie|lower}}">{{object.categorie}}</a>  <span>|</span> 
+                <h5>{{object.created_at|date:'M d, Y'}}<span>|</span>{{object.get_readtime}} to read</h5>
+                </div>
+                <hr>
+                <img src="{{ object.image.url }}" class="img-fluid" alt="...">
+            
+           
+            <!-- Post Content -->
+            <h3>{{object.body|linebreaks}}</h3>
+        </div>
+        <style>
+          .d-flex a{
+            text-decoration:none;
+            font-size:18px;
+            color: black;
+            font-weight: 400;
+            padding: 0 10px;
+            font-family: "Alegreya",sans-serif;
+
+          }
+          .d-flex h1{
+            font-family:'Alegreya', sans-serif;
+          }
+          .d-flex h5{
+            font-family:'Alegreya', sans-serif;font-weight:400;padding: 0 10px;
+          }
+          .d-flex h5 span{
+            padding: 0 10px;
+          }
+          .container img{
+            height: 28rem; margin: 20px 0px 40px 0px;
+          }
+          .container h3{
+            font-family:'Alegreya', sans-serif;font-weight:400;font-size: 22px;
+          }
+        </style>
+{% endblock %}

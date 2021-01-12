@@ -1,0 +1,154 @@
+{% extends 'base.html'%}
+{%block content%}
+{%load split%}
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<div class="py-0" style="margin-top: 5rem;">
+  <div class="container">
+    <div class="mt-4 half-post-entry d-block d-lg-flex bg-light">
+      
+      <div class="img-bg"><img class="w-100 h-100" src="{{one.image.url}}" alt=""></div>
+      <div class="contents">
+        <span class="caption">Latest</span>
+        <h2><a href="/blog/id={{one.id}}">{{one.title}}</a></h2>
+             <p class="mb-3">{{one.body_preview}}</p>
+        
+       
+        <div class="post-meta">
+          <span class="d-block"><a href="/category/{{one.categorie|lower}}">{{one.categorie}}</a></span>
+          <span class="date-read">{{one.created_at|date:'M d,Y'}}<span class="mx-1">&bullet;</span>{{one.get_readtime}}<span class="icon-star2"></span></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container row" style="margin-top: 5rem;">
+  <div class="col" > 
+  <h3 class="mb-5 m-6">Recent</h3>
+  {%for item in latest%}
+  <div class="post-entry-2 mt-4 d-flex" style="width: 559px;height:164.5px" >
+    <div class="thumbnail"  ><img style="width: 200px;" class='h-100'  src='{{item.image.url}}' alt=""></div>
+    <div class="contents ms-5">
+      <h2><a href="/blog/id={{item.id}}">{{item.title}}</a></h2>
+      <div class="post-meta">
+        
+        <span class="date-read">{{item.created_at|date:'M d, Y'}}<span class="mx-1">•</span>{{item.get_readtime}}<span class="icon-star2"></span></span>
+      </div>
+    </div>
+  </div>
+
+  {%endfor%}
+</div>
+</div>
+<div class="container row mt-4">
+  <div class="col w-50 mb-4 m-6" >
+    <h3>Politics</h3>
+    {%for item in politics%}
+      <div class="post-entry-2 mt-4 w-100 d-flex" >
+          <div class="contents post-meta">
+        <h2><a href="/blog/id={{item.id}}">{{item.title}}</a></h2>
+          <span class="d-block"><a href="/category/{{item.categorie}}">{{item.categorie}}</a></span>
+          <span class="date-read">{{item.created_at|date:'M d'}}<span class="mx-1">•</span>{{item.get_readtime}}<span class="icon-star2"></span></span>
+        </div>
+    </div>
+    {%endfor%}
+  </div>
+  <div class="col w-50 mb-4 m-6" >
+    <h3>Sport</h3>
+    {%for item in sport%}
+      <div class="post-entry-2 mt-4 w-100 d-flex" >
+          <div class="contents post-meta">
+        <h2><a href="/blog/id={{item.id}}">{{item.title}}</a></h2>
+          <span class="d-block">{{item.categorie}}</span>
+          <span class="date-read">{{item.created_at|date:'M d'}}<span class="mx-1">•</span>{{item.get_readtime}}<span class="icon-star2"></span></span>
+        </div>
+    </div>
+    {%endfor%}
+  </div>
+  
+</div>
+
+<style>
+  .date-read{
+    font-size: 17px;
+  }
+  .m-6{
+    text-decoration: underline;
+  
+  }
+  .col h3{
+    padding: 0 20px;
+  }
+.post-entry-1, .post-entry-2 {
+  font-size: .9rem;
+  margin-bottom: 30px; }
+  .post-entry-1 img, .post-entry-2 img {
+    margin-bottom: 30px; }
+  .post-entry-1 h2, .post-entry-2 h2 {
+    font-size: 20px; }
+    .post-entry-1 h2 a, .post-entry-2 h2 a {
+      color: #000;
+    text-decoration: none; }
+
+.post-entry-2 .contents h2{
+  font-size: 22px;
+  line-height: 28px;
+  font-family:'Poppins',sans-serif ;
+  
+}
+  .post-entry-2 .thumbnail {
+    background-size: cover;
+    background-position: center;
+    width: 30%; }
+  .post-entry-2 .contents {
+    width: 100%;
+    padding: 10px 20px; }
+.half-post-entry .caption {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color:rgb(97, 96, 96);  
+  font-family: "Alegreya",serif; }
+  .half-post-entry .img-bg, .half-post-entry .contents {
+  width: 50%; }
+  @media (max-width: 991.98px) {
+    .half-post-entry .img-bg, .half-post-entry .contents {
+      width: 100%;
+      height: 300px; } }
+      .half-post-entry .img-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.half-post-entry .contents {
+  padding: 50px;
+  font-size: .9rem;
+  height: auto;
+  
+   }
+  @media (max-width: 991.98px) {
+    .half-post-entry .contents {
+      padding: 30px; } }
+  .half-post-entry .contents h2 {
+    font-family: "Montserrat",sans-serif;
+    font-weight:600;
+    font-size: 26px;
+    margin-top: .4rem;
+     }
+    .half-post-entry .contents h2 a {
+      color: #000; 
+      text-decoration:none;
+
+      }
+      .half-post-entry .contents p{
+        font-family: 'Cabin', sans-serif;
+      }
+      .post-meta {
+  font-size: .8rem; }
+  .post-meta a {
+    color: #000; }
+  </style>
+{%endblock%}  

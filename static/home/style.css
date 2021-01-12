@@ -1,0 +1,21 @@
+
+:root{
+    --main: 'Alegreya', serif;
+--secondary: 'Montserrat', sans-serif;
+
+}
+h3{font-family:'Alegreya', serif ;}
+.nav-text{
+    text-transform: uppercase;
+    color: black;
+}
+.nav-text:hover{
+    color: black;
+}
+.nav-item{
+    color: black;
+}
+.nav-item:hover{
+    color: black;
+}
+

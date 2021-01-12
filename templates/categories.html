@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+<div class="container my-4">
+        <div class="row">
+            {% for product in object_list %}
+            <div class="col my-1">
+          <div class="card rounded-0 " style="width: 18rem;">
+            <img src="{{ product.image.url }}" alt="" style="height: 200px;" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">{{ product.created_at|date:'M d, Y' }}{{product.get_readtime}}</p>
+                <h5 class="card-title"><a href="/blog/id={{product.id}}" style="color: black;text-decoration: none;">{{ product.title }}</a></h5>       
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>    
+<style>
+    @media(max-width:730px){
+        .col{
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>   
+{% endblock %}
+
