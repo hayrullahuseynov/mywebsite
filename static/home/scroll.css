@@ -24,3 +24,8 @@ html{
     transform: scale(1);
   }
 }
+ @media(max-width:730px){
+   .top-link{
+     visibility:hidden;
+   }
+ }
